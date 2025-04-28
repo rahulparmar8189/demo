@@ -22,19 +22,24 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Create app directory if it doesn't exist
 mkdir -p /home/ec2-user/app
+echo "App directory created"
 
 # Copy application files
 if [ -d "/home/ec2-user/app" ]; then
+    echo "Copying application files"
     cp -r /home/ec2-user/app/* /home/ec2-user/app/
 else
+    echo "Inside else"
     echo "Error: Source directory /home/ec2-user/app does not exist"
     exit 1
 fi
 
 # Set proper permissions
+echo "Setting proper permissions"
 sudo chown -R ec2-user:ec2-user /home/ec2-user/app
 sudo chmod -R 755 /home/ec2-user/app
 
 # Start application
+echo "Starting application"
 cd /home/ec2-user/app
 docker-compose up -d 
