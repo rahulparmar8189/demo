@@ -41,5 +41,5 @@ sudo chmod -R 755 /home/ec2-user/app
 
 # Start application
 echo "Starting application"
-cd /home/ec2-user/app
+cd /home/ec2-user/app/demo
 docker-compose up -d 
