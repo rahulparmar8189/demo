@@ -4,7 +4,7 @@
 set -e
 
 # Navigate to app directory
-cd /home/ec2-user/app
+cd /home/ec2-user/app/demo
 
 # Install dependencies
 npm install
@@ -13,5 +13,6 @@ npm install
 npm run build
 
 # Set proper permissions
-sudo chown -R ec2-user:ec2-user /home/ec2-user/app
-sudo chmod -R 755 /home/ec2-user/app 
+echo "Setting proper permissions"
+sudo chown -R ec2-user:ec2-user /home/ec2-user/app/demo
+sudo chmod -R 755 /home/ec2-user/app/demo 
