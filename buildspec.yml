@@ -9,6 +9,8 @@ phases:
   build:
     commands:
       - npm run build
+      - docker build -t my-node-app .
+
   post_build:
     commands:
       - echo "Build completed successfully"
