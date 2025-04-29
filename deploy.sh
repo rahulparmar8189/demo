@@ -36,6 +36,7 @@ echo "Starting application..."
 docker-compose down
 git stash
 git stash drop
+git config --global pull.rebase true
 git pull origin main
 # docker stop $(docker ps -q)
 # docker rm $(docker ps -a -q)
