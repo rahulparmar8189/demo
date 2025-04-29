@@ -33,8 +33,9 @@ if [ ! -f "docker-compose.yml" ]; then
 fi
 
 echo "Starting application..."
+docker-compose down
 git pull origin main
-docker stop $(docker ps -q)
-docker rm $(docker ps -a -q)
+# docker stop $(docker ps -q)
+# docker rm $(docker ps -a -q)
 docker build -t my-node-app .
 docker-compose up -d
