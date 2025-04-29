@@ -8,6 +8,8 @@ cd /home/ec2-user/app/demo
 
 # Start the application using Docker Compose
 docker-compose down
+git pull origin main
+sleep 10
 docker-compose up -d
 
 # Wait for the application to start
