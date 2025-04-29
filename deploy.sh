@@ -16,15 +16,15 @@ sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-
   -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# Create app directory
-mkdir -p /home/ec2-user/app
-echo "App directory created"
+# # Create app directory
+# mkdir -p /home/ec2-user/app
+# echo "App directory created"
 
 # Set permissions
-sudo chown -R ec2-user:ec2-user /home/ec2-user/app
+sudo chown -R ec2-user:ec2-user /home/ec2-user/app/demo
 
 # Deploy application
-cd /home/ec2-user/app
+cd /home/ec2-user/app/demo
 
 # Ensure docker-compose.yml exists
 if [ ! -f "docker-compose.yml" ]; then
@@ -33,4 +33,8 @@ if [ ! -f "docker-compose.yml" ]; then
 fi
 
 echo "Starting application..."
+git pull origin main
+docker stop $(docker ps -q)
+docker rm $(docker ps -a -q)
+docker build -t my-node-app .
 docker-compose up -d

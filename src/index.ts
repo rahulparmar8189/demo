@@ -10,7 +10,7 @@ app.use(express.json());
 app.get('/api/test', (req: Request, res: Response) => {
   res.json({
     success: true,
-    message: 'Checking the CI/CD pipeline',
+    message: 'Checking the CI/CD pipeline in the index.ts file',
     timestamp: new Date().toISOString()
   });
 });
