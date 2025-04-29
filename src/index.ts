@@ -10,7 +10,7 @@ app.use(express.json());
 app.get('/api/test', (req: Request, res: Response) => {
   res.json({
     success: true,
-    message: 'API is working successfully!',
+    message: 'Checking the CI/CD pipeline',
     timestamp: new Date().toISOString()
   });
 });
