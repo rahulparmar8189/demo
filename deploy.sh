@@ -35,8 +35,8 @@ fi
 echo "Starting application..."
 docker-compose down
 git config --global --add safe.directory /home/ec2-user/app/demo
-git stash
-git stash drop
+# git stash
+# git stash drop
 git pull origin main --rebase
 # docker stop $(docker ps -q)
 # docker rm $(docker ps -a -q)
