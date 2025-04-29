@@ -36,8 +36,7 @@ echo "Starting application..."
 docker-compose down
 git stash
 git stash drop
-git config --global pull.rebase true
-git pull origin main
+git pull origin main --rebase
 # docker stop $(docker ps -q)
 # docker rm $(docker ps -a -q)
 docker build -t my-node-app .
