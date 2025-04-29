@@ -41,6 +41,6 @@ git pull origin main --rebase
 # docker rm $(docker ps -a -q)
 docker build -t my-node-app .
 docker-compose up -d
-
+mkdir hello
 
 # False commit
