@@ -4,7 +4,7 @@
 set -e
 
 # Navigate to app directory
-cd /home/ec2-user/app/demo
+cd /home/ec2-user/app
 
 # Start the application using Docker Compose
 docker-compose down
