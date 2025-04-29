@@ -34,6 +34,8 @@ fi
 
 echo "Starting application..."
 docker-compose down
+git stash
+git stash drop
 git pull origin main
 # docker stop $(docker ps -q)
 # docker rm $(docker ps -a -q)
