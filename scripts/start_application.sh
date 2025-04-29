@@ -8,7 +8,11 @@ cd /home/ec2-user/app
 
 # Start the application using Docker Compose
 docker-compose down
+docker stop $(docker ps -q)
+docker rm $(docker ps -a -q)
 git pull origin main
+sleep 10
+docker build -t my-node-app .
 sleep 10
 docker-compose up -d
 
