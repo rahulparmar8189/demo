@@ -30,7 +30,7 @@ fi
 
 echo "Starting application..."
 docker-compose down
-docker rmi -f $(docker images -q)
+docker rmi -f demo-app
 git config --global --add safe.directory /home/ec2-user/app/demo
 git pull origin main --rebase
 docker-compose build
