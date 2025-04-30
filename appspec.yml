@@ -8,11 +8,3 @@ hooks:
     - location: deploy.sh
       timeout: 300
       runas: root
-  AfterInstall:
-    - location: scripts/after_install.sh
-      timeout: 300
-      runas: root
-  ApplicationStart:
-    - location: scripts/start_application.sh
-      timeout: 300
-      runas: root
