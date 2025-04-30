@@ -29,7 +29,9 @@ if [ ! -f "docker-compose.yml" ]; then
 fi
 
 echo "Starting application..."
-docker-compose down
+docker stop $(docker ps -q)
+docker rm $(docker ps -aq)
+docker rmi -f $(docker images -q)
 git config --global --add safe.directory /home/ec2-user/app/demo
 git pull origin main --rebase
 docker-compose build
